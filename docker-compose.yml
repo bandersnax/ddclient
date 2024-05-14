@@ -1,0 +1,14 @@
+---
+services:
+  ddclient:
+    image: lscr.io/linuxserver/ddclient:latest
+    container_name: ddclient
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Detroit
+
+    volumes:
+      - /home/ken/docker-volumes/ddclient:/config ## Need to create the path described here on the server
+
+    restart: unless-stopped
